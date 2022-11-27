@@ -7,15 +7,25 @@ def calculate_package_wrappings(box_size):
 
 
 def calculate_ribbons_in_feet(box_size):
-    pass
+    messurments = [int(x) for x in box_size.split("x")]
+    lowest_nums = sorted(messurments)[0:2]
+    bow = 1
+    for value in messurments:
+        bow *= value
+
+    return sum([x + x for x in lowest_nums]) + bow
 
 
-with open("data", "r") as file:
-    total_area = 0
-    lines = file.readlines()
-    for line in lines:
-        print(f"{line}")
-        total_area += calculate_package_wrappings(line.strip("\n"))
+def openfile_and_count():
+    with open("data", "r") as file:
+        total_area = 0
+        total_ribbon = 0
+        lines = file.readlines()
+        for line in lines:
+            total_area += calculate_package_wrappings(line.strip("\n"))
+            total_ribbon += calculate_ribbons_in_feet(line.strip("\n"))
+
+    return total_area, total_ribbon
 
 
-print(total_area)
+print(openfile_and_count())

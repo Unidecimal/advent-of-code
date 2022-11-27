@@ -1,6 +1,3 @@
-import pytest
-
-
 from main import calculate_package_wrappings, calculate_ribbons_in_feet
 
 
