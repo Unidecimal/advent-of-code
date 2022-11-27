@@ -1,0 +1,27 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <value>
+          <list size="14">
+            <item index="0" class="java.lang.String" itemvalue="plugin_utils_light" />
+            <item index="1" class="java.lang.String" itemvalue="plugin_parser_utils" />
+            <item index="2" class="java.lang.String" itemvalue="plugin_csv_parser" />
+            <item index="3" class="java.lang.String" itemvalue="plugin_converter_fields" />
+            <item index="4" class="java.lang.String" itemvalue="pandas" />
+            <item index="5" class="java.lang.String" itemvalue="google-ads" />
+            <item index="6" class="java.lang.String" itemvalue="plugin_mutate_functions" />
+            <item index="7" class="java.lang.String" itemvalue="structlog" />
+            <item index="8" class="java.lang.String" itemvalue="funnel_rules_engine" />
+            <item index="9" class="java.lang.String" itemvalue="tabulate" />
+            <item index="10" class="java.lang.String" itemvalue="connector-plugin" />
+            <item index="11" class="java.lang.String" itemvalue="plugin_example_data_generator" />
+            <item index="12" class="java.lang.String" itemvalue="numpy" />
+            <item index="13" class="java.lang.String" itemvalue="plugin_utils" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
