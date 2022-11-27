@@ -6,6 +6,10 @@ def calculate_package_wrappings(box_size):
     return sum(total_area)
 
 
+def calculate_ribbons_in_feet(box_size):
+    pass
+
+
 with open("data", "r") as file:
     total_area = 0
     lines = file.readlines()
