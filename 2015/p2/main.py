@@ -25,7 +25,7 @@ def openfile_and_count():
             total_area += calculate_package_wrappings(line.strip("\n"))
             total_ribbon += calculate_ribbons_in_feet(line.strip("\n"))
 
-    return total_area, total_ribbon
+    return f"Area of wrapping needed: {total_area} square feet, Length of ribbon needed: {total_ribbon} feet"
 
 
 print(openfile_and_count())
