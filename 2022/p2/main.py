@@ -1,34 +1,3 @@
-"""
-elf: A for Rock, B for Paper, and C for Scissors.
-you: X for Rock, Y for Paper, and Z for Scissors.
-
-Score:
-Shape (1 for Rock, 2 for Paper, and 3 for Scissors)
-plus
-Outcome of the round (0 if you lost, 3 if the round was a draw, and 6 if you won).
-
-A Y
-B X
-C Z
-This strategy guide predicts and recommends the following:
-
-In the first round, your opponent will choose Rock (A), and you should choose Paper (Y). This ends in a win for you with
- a score of 8 (2 because you chose Paper + 6 because you won).
-In the second round, your opponent will choose Paper (B), and you should choose Rock (X). This ends in a loss for you
-with a score of 1 (1 + 0).
-The third round is a draw with both players choosing Scissors, giving you a score of 3 + 3 = 6.
-In this example, if you were to follow the strategy guide, you would get a total score of 15 (8 + 1 + 6).
-
-What would your total score be if everything goes exactly according to your strategy guide?
-
---part two--
-
-X lose,
-Y draw,
-Z win.
-"""
-
-
 def read_strategy_plan_and_return_score_list(rigged=False):
     round_scores = []
     with open("data", "r") as file:
@@ -43,6 +12,7 @@ def read_strategy_plan_and_return_score_list(rigged=False):
 
 
 def match_point(string):
+
     shapes = string.split(" ")
     elf_shape = shapes[0]
     you_shape = shapes[1]
@@ -50,13 +20,15 @@ def match_point(string):
 
 
 def match_point_rigged_matches(string):
+
     strategy = string.split(" ")
     elf_shape = strategy[0]
     match_result = strategy[1]
-    return round_score_if_need_to(match_result, elf_shape)
+    return round_and_shape_score_if_rigged(match_result, elf_shape)
 
 
 def shape_score(shape):
+
     if shape in "AX":
         return 1
     if shape in "BY":
@@ -66,6 +38,7 @@ def shape_score(shape):
 
 
 def round_score(elf_shape, you_shape):
+
     if elf_shape == "A" and you_shape == "X":
         return 3
     if elf_shape == "A" and you_shape == "Y":
@@ -86,7 +59,7 @@ def round_score(elf_shape, you_shape):
         return 3
 
 
-def round_score_if_need_to(match_result, elf_shape):
+def round_and_shape_score_if_rigged(match_result, elf_shape):
 
     if match_result == "Z" and elf_shape == "A":
         return 6 + shape_score("B")
