@@ -13,71 +13,71 @@ def read_strategy_plan_and_return_score_list(rigged=False):
 
 def match_point(string):
 
-    shapes = string.split(" ")
-    elf_shape = shapes[0]
-    you_shape = shapes[1]
-    return shape_score(you_shape) + round_score(elf_shape, you_shape)
+    handsigns = string.split(" ")
+    elf_handsign = handsigns[0]
+    your_handsign = handsigns[1]
+    return shape_score(your_handsign) + round_score(elf_handsign, your_handsign)
 
 
 def match_point_rigged_matches(string):
 
     strategy = string.split(" ")
-    elf_shape = strategy[0]
+    elf_handsign = strategy[0]
     match_result = strategy[1]
-    return round_and_shape_score_if_rigged(match_result, elf_shape)
+    return round_and_shape_score_if_rigged(match_result, elf_handsign)
 
 
-def shape_score(shape):
+def shape_score(handsign):
 
-    if shape in "AX":
+    if handsign in "AX":
         return 1
-    if shape in "BY":
+    if handsign in "BY":
         return 2
-    if shape in "CZ":
+    if handsign in "CZ":
         return 3
 
 
-def round_score(elf_shape, you_shape):
+def round_score(elf_handsign, your_handsign):
 
-    if elf_shape == "A" and you_shape == "X":
+    if elf_handsign == "A" and your_handsign == "X":
         return 3
-    if elf_shape == "A" and you_shape == "Y":
+    if elf_handsign == "A" and your_handsign == "Y":
         return 6
-    if elf_shape == "A" and you_shape == "Z":
+    if elf_handsign == "A" and your_handsign == "Z":
         return 0
-    if elf_shape == "B" and you_shape == "X":
+    if elf_handsign == "B" and your_handsign == "X":
         return 0
-    if elf_shape == "B" and you_shape == "Y":
+    if elf_handsign == "B" and your_handsign == "Y":
         return 3
-    if elf_shape == "B" and you_shape == "Z":
+    if elf_handsign == "B" and your_handsign == "Z":
         return 6
-    if elf_shape == "C" and you_shape == "X":
+    if elf_handsign == "C" and your_handsign == "X":
         return 6
-    if elf_shape == "C" and you_shape == "Y":
+    if elf_handsign == "C" and your_handsign == "Y":
         return 0
-    if elf_shape == "C" and you_shape == "Z":
+    if elf_handsign == "C" and your_handsign == "Z":
         return 3
 
 
-def round_and_shape_score_if_rigged(match_result, elf_shape):
+def round_and_shape_score_if_rigged(match_result, elf_handsign):
 
-    if match_result == "Z" and elf_shape == "A":
+    if match_result == "Z" and elf_handsign == "A":
         return 6 + shape_score("B")
-    if match_result == "Z" and elf_shape == "B":
+    if match_result == "Z" and elf_handsign == "B":
         return 6 + shape_score("C")
-    if match_result == "Z" and elf_shape == "C":
+    if match_result == "Z" and elf_handsign == "C":
         return 6 + shape_score("A")
-    if match_result == "X" and elf_shape == "A":
+    if match_result == "X" and elf_handsign == "A":
         return 0 + shape_score("C")
-    if match_result == "X" and elf_shape == "B":
+    if match_result == "X" and elf_handsign == "B":
         return 0 + shape_score("A")
-    if match_result == "X" and elf_shape == "C":
+    if match_result == "X" and elf_handsign == "C":
         return 0 + shape_score("B")
-    if match_result == "Y" and elf_shape == "A":
+    if match_result == "Y" and elf_handsign == "A":
         return 3 + shape_score("A")
-    if match_result == "Y" and elf_shape == "B":
+    if match_result == "Y" and elf_handsign == "B":
         return 3 + shape_score("B")
-    if match_result == "Y" and elf_shape == "C":
+    if match_result == "Y" and elf_handsign == "C":
         return 3 + shape_score("C")
 
 
