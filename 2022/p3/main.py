@@ -23,10 +23,10 @@ def load_list_of_rucksacks():
 
 
 def search_rucksacks_compartments(list_of_rucksacks):
-        list_of_items = list()
-        for rucksack in list_of_rucksacks:
-            list_of_items.append(find_item_type_that_appears_in_both_compartments(rucksack))
-        return list_of_items
+    list_of_items = list()
+    for rucksack in list_of_rucksacks:
+        list_of_items.append(find_item_type_that_appears_in_both_compartments(rucksack))
+    return list_of_items
 
 
 def sum_priorities_item(list_of_items):
@@ -64,10 +64,10 @@ def find_item_type_that_appears_in_rucksack_group(rucksack_group):
 
 
 def search_rucksacks_in_group(list_of_groups):
-        list_of_items = list()
-        for rucksack_group in list_of_groups:
-            list_of_items.append(find_item_type_that_appears_in_rucksack_group(rucksack_group))
-        return list_of_items
+    list_of_items = list()
+    for rucksack_group in list_of_groups:
+        list_of_items.append(find_item_type_that_appears_in_rucksack_group(rucksack_group))
+    return list_of_items
 
 
 # part one
