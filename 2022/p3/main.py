@@ -1,10 +1,3 @@
-# data = "vJrwpWtwJgWrhcsFMMfFFhFp"
-# hlen = int(len(data)/2)
-# set1 = set(data[:hlen])
-# set2 = set(data[hlen:])
-# set3 = list(set1.intersection(set2))[0]
-
-
 def find_item_type_that_appears_in_both_compartments(rucksack_items):
 
     hlen = int(len(rucksack_items) / 2)
